@@ -17,7 +17,7 @@ connectDB();
 const app = express();
 
 app.use(express.json());
-app.use(cors({ origin: "*" }));
+app.use(cors({ origin: "https://emailbuildertemplate.netlify.app" }));
 app.use("/uploads", express.static("uploads"));
  
 app.get("/", (req, res) => {

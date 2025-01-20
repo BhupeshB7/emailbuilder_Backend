@@ -5,7 +5,8 @@ import emailRoutes from "./routes/email.routes.js";
 import uploadRoutes from "./routes/upload.routes.js";
 import configRoutes from "./routes/config.routes.js";
 import { connectDB } from "./config/db.js";
-
+import dotenv from "dotenv";
+dotenv.config();
 cloudinaryV2.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,

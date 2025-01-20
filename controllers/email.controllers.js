@@ -23,7 +23,7 @@ export const renderAndDownloadTemplate = async (req, res) => {
         res.setHeader("Content-Disposition", "attachment; filename=email-template.html");
         res.send(rendered);
     } catch (error) {
-        // console.log(error);
+        console.log(error);
         res.status(500).send("Error rendering template");
     }
 };

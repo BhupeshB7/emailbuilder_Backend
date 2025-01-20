@@ -29,7 +29,7 @@ export const uploadEmailConfig = async (req, res) => {
      await emailTemplateModel.create(config);
     res.status(200).json({ message: "Configuration saved successfully" });
   } catch (error) {
-    // console.error(error);
+    console.error(error);
     res.status(500).json({ message: "Error saving configuration" });
   }
 };

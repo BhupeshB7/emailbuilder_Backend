@@ -32,13 +32,13 @@ export const uploadMiddleware = (req, res, next) => {
 
 export const uploadImage = async (req, res) => {
     try {
-        // console.log('Request file:', req.file); 
+        console.log('Request file:', req.file); 
 
         if (!req.file) {
             return res.status(400).json({ error: "No file uploaded" });
         }
         const result = await cloudinaryV2.uploader.upload(req.file.path);
-        // console.log('Cloudinary result:', result); 
+        console.log('Cloudinary result:', result); 
 
         await fs.promises.unlink(req.file.path);
 
@@ -48,7 +48,7 @@ export const uploadImage = async (req, res) => {
         });
 
     } catch (error) {
-        // console.error('Upload error:', error); 
+        console.error('Upload error:', error); 
         return res.status(500).json({
             error: "Error uploading to Cloudinary",
             details: error.message

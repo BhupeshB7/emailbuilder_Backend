@@ -14,5 +14,3 @@ logs/
 dist/
 build/
 
-# Temporary files
-uploads/

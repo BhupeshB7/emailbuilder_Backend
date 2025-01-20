@@ -24,6 +24,7 @@ export const uploadMiddleware = (req, res, next) => {
         if (err instanceof multer.MulterError) { 
             return res.status(400).json({ error: err.message });
         } else if (err) { 
+            console.error('Multer error:', err);
             return res.status(500).json({ error: 'An unknown error occurred' });
         } 
         next();
